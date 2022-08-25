@@ -31,7 +31,8 @@ public class UpdateBooking {
                         contentType(ContentType.JSON).
                         body(body).when().put(endpoint).then().
                         assertThat().
-                        statusCode(200).log().body();
+                        statusCode(200);
+        response.log().body();
     }
 
 }
