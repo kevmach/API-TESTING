@@ -8,12 +8,16 @@ import static io.restassured.path.json.JsonPath.given;
 
 public class CreateBooking {
     @Test
-    public void GetResponse() {
+    public void PostResponse() {
         String endpoint = "https://restful-booker.herokuapp.com/booking";
         var response=
         given().
-                header("Content-Type", "application/json; charset=utf-8").accept(ContentType.JSON).
-                when().post(endpoint).
+
+                header("Accept", ContentType.JSON.getAcceptHeader()).
+                contentType(ContentType.JSON).
+                when().
+
+                post(endpoint).
                 then().log().body().
                 assertThat().
                 statusCode(200).
@@ -25,5 +29,6 @@ public class CreateBooking {
                 body("checkin", equalTo("2018-01-02")).
                 body("checkout", equalTo("2019-01-01")).
                 body("additionalneeds", equalTo("Breakfast"));
+        response.log().body();
     }
 }
