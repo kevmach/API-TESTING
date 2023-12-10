@@ -3,6 +3,7 @@ package org.example;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.testng.Assert;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -42,7 +43,7 @@ public class Main {
                 .assertThat()
                 .statusCode(200)
                 .body("scope", equalTo("APP"))
-                .extract().response().asString();
+
         //Extracting our body response as string
         //.asString();
 
@@ -86,5 +87,6 @@ public class Main {
         JsonPath jsA = new JsonPath(getPlaceResponse);
         String actualAddress = jsA.getString("address");
         System.out.println(actualAddress);
+        Assert.assertEquals(actualAddress,newAddress);
     }
 }
