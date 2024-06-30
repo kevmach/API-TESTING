@@ -8,7 +8,6 @@ This project demonstrates API automation using Rest Assured in Java for interact
 
    ```bash
    git clone https://github.com/kevmach/Restful-API-s-Automation-using-RestAssured-Java.git
-   cd rest-assured-api-automation
    
    
 Prerequisites:
