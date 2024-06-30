@@ -7,8 +7,9 @@ This project demonstrates API automation using Rest Assured in Java for interact
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/rest-assured-api-automation.git
+   git clone https://github.com/kevmach/Restful-API-s-Automation-using-RestAssured-Java.git
    cd rest-assured-api-automation
+   
    
 Prerequisites:
 
